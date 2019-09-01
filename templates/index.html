@@ -1,0 +1,44 @@
+<!--
+<form class="form-inline" method="POST" action="{{ url_for('result') }}">
+  <div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon">Please select</span>
+            <select name="vietlott_select" class="selectpicker form-control">
+              {% for o in vietlott_type %}
+              <option value="{{ o.name }}">{{ o.name }}</option>
+              {% endfor %}
+            </select>
+    </div>
+    <button type="submit" class="btn btn-default">Go</button>
+  </div>
+</form>
+-->
+<form class="form-inline" method="POST" action="{{ url_for('result') }}">   
+  <div class="select">Please select     
+    <select name="vietlott_select" class="selectpicker form-control">    
+      {% for o in vietlott_type %}     
+      <option value="{{ o.name }}">{{ o.name }}</option>    
+      {% endfor %}    
+    </select>   
+  </div>    
+  <button type="submit" class="btn">Go</button>
+</form>
+
+
+<h3>Vietlott 6/55</h3>
+<p>Play rule:  you have to choose 6 different numbers to make a combination, each number is between 1 to 55.</p>
+<p>Problem:    You have 1 in 28,989,675 chance of winning the Vietlott Power 6/55. How can we improve the chance of winning in the lottery?</p>
+<p>Solution:   Making a program that eliminates rare combinations by setting some rules.</p>
+<p>*Rules*</p>
+<p>    1. It should generate 6 random numbers from 1-55</p>
+<p>    2. It should generate numbers from Low (1-28) and High (29-55) with this ratios: 3:3  4:2  2:4</p>
+<p>    3. It should generate Odd and Even numbers with the same ratio as above</p>
+<p>    4. It should not generate 6 numbers from all of 5 groups</p>
+<p>    5. The sum of the 6 numbers should be from 104 - 239</p>
+<p>    6. Every list should not be generated twice or more (Not working on this version)</p>
+<p>*Groups*</p>
+<p>    1 --  1-11</p>
+<p>    2 -- 12-22</p>
+<p>    3 -- 23-33</p>
+<p>    4 -- 34-44</p>
+<p>    5 -- 45-55</p>
